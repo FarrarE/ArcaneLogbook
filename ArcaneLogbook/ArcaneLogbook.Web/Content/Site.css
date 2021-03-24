@@ -7,6 +7,17 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+
+}
+
+footer {
+    text-align: center;
+    background: white;
+    position: fixed;
+    width:100%;
+    bottom: 0;
+    padding:.25rem;
+    border:solid 1px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
