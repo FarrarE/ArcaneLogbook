@@ -18,6 +18,13 @@ namespace ArcaneLogbook.Web
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+
+            routes.MapRoute(
+                name: "Campaigns",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Campaigns", action = "Index", id = UrlParameter.Optional }
+            );
         }
     }
 }

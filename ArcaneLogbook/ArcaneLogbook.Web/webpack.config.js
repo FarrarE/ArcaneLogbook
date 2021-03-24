@@ -1,10 +1,15 @@
 const path = require("path");
- 
+
 module.exports = {
+    watch: true,
+    watchOptions: {
+        ignored: /node_modules/,
+    },
     entry: {
         home: "./src/Containers/Home/index.js",
         about: "./src/Containers/About/index.js",
         contact: "./src/Containers/Contact/index.js",
+        campaigns: "./src/Containers/campaigns/index.js",
     },
     output: {
         path: path.resolve(__dirname, "./dist"),
