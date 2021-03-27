@@ -1,0 +1,62 @@
+.token-information {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0.5rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  z-index: 1;
+  padding: 0.5rem;
+}
+
+.token-information .handle {
+  margin-top: auto;
+}
+
+.token-information input {
+  border-radius: 0.5rem;
+  border: none;
+  margin: 0.5rem;
+  color: grey;
+  font-weight: bold;
+}
+
+.token-information .name-label {
+  width: 10rem;
+}
+
+.binary-tracker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.binary-tracker input {
+  width: 3rem;
+}
+
+.binary-tracker span {
+  padding-top: .2rem;
+}
+
+.none {
+  display: none;
+}
+/*# sourceMappingURL=index.css.map */

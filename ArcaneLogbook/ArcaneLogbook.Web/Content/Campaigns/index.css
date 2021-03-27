@@ -1,0 +1,9 @@
+.campaign-container{
+    margin: 10rem;
+}
+
+.add-campaign{
+    position: fixed;
+    right:5rem;
+    top:5rem;
+}

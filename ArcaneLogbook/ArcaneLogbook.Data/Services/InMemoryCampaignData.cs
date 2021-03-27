@@ -13,9 +13,9 @@ namespace ArcaneLogbook.Data.Services
         {
             campaigns = new List<Campaign>() {
 
-                new Campaign { Id = 1, Name = "Candlekeep Mysteries"},
-                new Campaign { Id = 2, Name = "Curse of Strahd" },
-                new Campaign { Id = 3, Name = "Storm King's Thunder" }
+                new Campaign { Id = 1, Name = "Candlekeep Mysteries", Edition = "5e"},
+                new Campaign { Id = 2, Name = "Curse of Strahd", Edition = "5e"},
+                new Campaign { Id = 3, Name = "Storm King's Thunder", Edition = "5e"}
             };
         }
 

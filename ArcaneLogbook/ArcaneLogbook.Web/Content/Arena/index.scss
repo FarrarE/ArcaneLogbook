@@ -1,0 +1,393 @@
+/* {Map container}*/
+.canvas-container{
+    position: relative;
+    display:flex;
+}
+
+/* {Canvas}*/
+#center {
+    position: absolute;
+    right:0;
+    margin:1rem;
+    z-index: 50;
+    background-color: transparent;
+    display: none;
+    font-size: 3rem;
+    opacity: 1;
+    animation: fade 2s linear;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+/* Tool Bar*/
+
+.tray {
+    position: absolute;
+    display: flex;
+    border-radius: .5rem;
+    justify-content: space-around;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 100;
+    width: 15rem;
+    font-size: 2rem;
+    margin-top:1rem;
+    background-color: #222;
+    padding:1rem;
+}
+.edit-icon{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:.5rem;
+
+}
+
+.edit-icon:hover {
+    cursor: pointer;
+}
+
+/* {Token drawer}*/
+
+.token-drawer {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    bottom: 0;
+    height: 9rem;
+    z-index: 300;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    overflow-y: scroll;
+    background-color: #222;
+}
+
+.token-drawer.open {
+    -webkit-transform: translateY(20%);
+    transform: translateY(20%);
+}
+
+.token-drawer.docked {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+}
+
+.add-icon-token {
+    font-size: 2rem;
+}
+
+.add-icon-token svg {
+    margin-top: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.token-container {
+    padding: 1rem;
+    padding-top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.token-container p {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.token-img .token {
+    margin: 0 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.upload-form-token {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.searchbar input {
+    padding: .1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    color: grey !important;
+    border: none;
+    -webkit-box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+#droppable2 {
+    height: 50px;
+    width: 200px;
+}
+
+.token-form {
+    padding: 10px;
+}
+
+.token-thumbnails {
+    position: relative;
+}
+
+.token-form input {
+    display: none;
+}
+
+.token-options {
+    display: none;
+}
+
+.token-options:hover {
+    cursor: pointer;
+}
+
+.show-options + .token-options {
+    display: block;
+}
+
+.option-btn {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    z-index: 300;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    border-radius: 50%;
+    color: black;
+    line-height: 1.6rem;
+    padding: 0.1rem;
+    font-size: 1rem;
+    -webkit-box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.delete-token {
+    right: 0.2rem;
+    top: -1.2rem;
+}
+
+.info-token {
+    right: -1rem;
+    top: 0.5rem;
+}
+
+
+/* {Map drawer}*/
+
+.map-drawer {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  bottom: 0;
+  height: 9rem;
+  z-index: 300;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: #222;
+}
+
+.map-drawer p {
+  margin-top: 3rem;
+}
+
+.map-drawer.open {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.map-thumbnails {
+  position: relative;
+  margin: 1rem;
+}
+
+.map-container {
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 1rem;
+}
+
+.add-icon {
+  font-size: 3rem;
+}
+
+.add-icon svg {
+  margin-top: 1.5rem;
+}
+
+.map-container .map {
+  width: 10rem;
+  height: 5.62rem;
+}
+
+.map-form {
+  position: relative;
+}
+
+#map-file-input {
+  display: none;
+}
+
+.upload-form {
+  width: 10rem;
+  height: 5.62rem;
+  margin: 1rem;
+}
+
+.delete-map {
+  display: none;
+  right: 0.2rem;
+  top: -1.2rem;
+}
+
+@media only screen and (max-width: 1300px) {
+  .map-container {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+.show-options + .delete-map {
+  display: block;
+}
+
+@-webkit-keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* {option tray}*/
+
+.options {
+    position: absolute;
+    display: flex;
+    border-radius: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: max-content;
+    height: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    z-index: 301;
+    font-weight: bold;
+    padding:1rem;
+    background-color: #222;
+
+    .handle{
+        margin-bottom: .5rem;
+    }
+}
+
+.logout-button {
+    font-size: 1.2rem;
+    padding: 0.7rem;
+}
+
+input {
+    text-align: center;
+}
+
+
+#optionTray {
+    display: none;
+}
+
+@media only screen and (max-width: 1300px) {
+    .options {
+        font-size: 1.5rem;
+
+        .logout-button {
+            span {
+                padding: 0.5rem;
+            }
+        }
+        .handle {
+            font-size: 4rem;
+        }
+        #help-icon {
+            top: 1.5rem;
+            right: 1rem;
+        }
+    }
+}
+
+/* Menu Bar */
+
+.menu-bar {
+    display: flex;
+    justify-content: space-between;
+    cursor:pointer;
+    svg{
+        margin:.5rem;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .options {
+        font-size: 1.5rem;
+    }
+
+        .options .logout-button span {
+            padding: 0.5rem;
+        }
+
+        .options .handle {
+            font-size: 4rem;
+        }
+
+        .options #help-icon {
+            top: 1.5rem;
+            right: 1rem;
+        }
+}

@@ -9,17 +9,10 @@ namespace ArcaneLogbook.Web.Controllers
 {
     public class HomeController : Controller
     {
-        ICampaignData db;
-
-        public HomeController()
-        {
-            db = new InMemoryCampaignData();
-        }
-
         public ActionResult Index()
         {
-            var model = db.GetAll();
-            return View(model);
+            
+            return View();
         }
 
         public ActionResult Campaigns()

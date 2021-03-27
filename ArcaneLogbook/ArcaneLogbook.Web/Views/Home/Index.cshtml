@@ -1,9 +1,8 @@
-﻿@model  IEnumerable<ArcaneLogbook.Data.Models.Campaign>
-
-@{
+﻿@{
     ViewBag.Title = "Home Page";
 }
 
-<div id="root"></div>
 
+<div id="root"></div>
+@Styles.Render("~/Content/Home/index.css")
 @Scripts.Render("~/dist/home.js")

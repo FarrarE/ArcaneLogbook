@@ -11,5 +11,12 @@ namespace ArcaneLogbook.Data.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Edition { get; set; }
+
+        override public string ToString()
+        {
+            return "id:" + Id + "," + "name:" + Name + "," + "edition:" + Edition;
+        }
     }
+
+
 }

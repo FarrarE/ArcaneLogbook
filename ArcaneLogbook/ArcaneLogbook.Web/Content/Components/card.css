@@ -1,0 +1,13 @@
+.card{
+    background: #393e47;
+    box-shadow:  1rem 1rem 2rem #2d3138;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    color:white;
+}
+
+.card:hover{
+    box-shadow: .1rem .1rem .5rem rgb(181, 199, 211),
+                -.1rem -.1rem .5rem rgb(181, 199, 211);
+}

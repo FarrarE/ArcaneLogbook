@@ -1,0 +1,27 @@
+.tray {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: .5rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100;
+  width: 15rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.edit-icon {
+  padding: .5rem;
+}
+
+.edit-icon:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=index.css.map */
