@@ -17,5 +17,11 @@ namespace ArcaneLogbook.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Campaign(string Id)
+        {
+            ViewBag.Id = Id;
+            return View();
+        }
     }
 }

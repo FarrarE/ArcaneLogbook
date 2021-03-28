@@ -7,6 +7,7 @@ module.exports = {
         about: "./src/Containers/About/index.js",
         contact: "./src/Containers/Contact/index.js",
         campaigns: "./src/Containers/Campaigns/index.js",
+        campaign: "./src/Containers/Campaign/index.js",
         arena: "./src/Containers/Arena/index.js",
     },
     output: {
