@@ -4,6 +4,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
 /* {Canvas}*/
@@ -78,14 +79,21 @@
 }
 
 /* {Token drawer}*/
-.token-drawer {
+.drawer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   position: fixed;
   bottom: 0;
-  height: 9rem;
+  height: 12rem;
   z-index: 300;
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
@@ -97,14 +105,14 @@
   background-color: #222;
 }
 
-.token-drawer.open {
+.drawer.open {
   -webkit-transform: translateY(20%);
-  transform: translateY(20%);
+          transform: translateY(20%);
 }
 
-.token-drawer.docked {
+.drawer.docked {
   -webkit-transform: translateY(0%);
-  transform: translateY(0%);
+          transform: translateY(0%);
 }
 
 .add-icon-token {
@@ -142,6 +150,12 @@
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
+}
+
+.searchbar {
+  display: inline;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .searchbar input {
@@ -215,35 +229,6 @@
 }
 
 /* {Map drawer}*/
-.map-drawer {
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  position: fixed;
-  bottom: 0;
-  height: 9rem;
-  z-index: 300;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  overflow: hidden;
-  overflow-y: scroll;
-  background-color: #222;
-}
-
-.map-drawer p {
-  margin-top: 3rem;
-}
-
-.map-drawer.open {
-  -webkit-transform: translateY(0%);
-  transform: translateY(0%);
-}
-
 .map-thumbnails {
   position: relative;
   margin: 1rem;
@@ -254,7 +239,7 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   padding-top: 1rem;
 }
 
@@ -359,6 +344,36 @@
 
 .options .handle {
   margin-bottom: .5rem;
+}
+
+.route-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: .5rem;
+  background: #333;
+  font-size: 2rem;
+  outline: none;
+  border: none;
+}
+
+.route-link:hover {
+  -webkit-box-shadow: 0 0 3pt 2pt grey;
+          box-shadow: 0 0 3pt 2pt grey;
+}
+
+.route-link:active {
+  background: #333;
+  -webkit-box-shadow: inset 10px 10px 6px #1d1d1d, inset -10px -10px 6px #272727;
+          box-shadow: inset 10px 10px 6px #1d1d1d, inset -10px -10px 6px #272727;
 }
 
 .logout-button {

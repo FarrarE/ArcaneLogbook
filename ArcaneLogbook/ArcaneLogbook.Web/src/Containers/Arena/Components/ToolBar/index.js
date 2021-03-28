@@ -5,13 +5,14 @@ import { BiCog } from 'react-icons/bi';
 import { CgMinimizeAlt } from 'react-icons/cg';
 
 function ToolBar(props) {
+
     return (
         <div className={props.mode}>
             <div className="tray" >
-                <div className="edit-icon" onClick={props.toggleTokens}>
+                <div className="edit-icon" onClick={() => props.toggleDrawerState('token')}>
                     <TiContacts />
                 </div>
-                <div className="edit-icon" onClick={props.toggleMaps}>
+                <div className="edit-icon" onClick={() => props.toggleDrawerState('map')}>
                     <RiTreasureMapLine />
                 </div>
                 <div className="edit-icon" onClick={props.close} >

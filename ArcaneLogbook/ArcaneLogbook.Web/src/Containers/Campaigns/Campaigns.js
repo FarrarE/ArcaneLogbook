@@ -3,7 +3,7 @@ import Card from '../../Components/Card';
 
 function Campaigns(props) {
     return (
-        <div>
+        <div className="view">
             <h2>Campaigns</h2>
             <button className="add-campaign">Add</button>
             <Card title="CandleKeep Mysteries" body="Info and stuff" />

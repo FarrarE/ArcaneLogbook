@@ -1,19 +1,10 @@
 import React, { useState, useEffect } from "react";
-import * as Constants from '../../constants';
 
 // Components
 import ToolBar from '../ToolBar';
-import TokenDrawer from '../TokenDrawer';
-import MapDrawer from '../MapDrawer';
+import Drawer from '../Drawer';
 import OptionTray from '../OptionTray';
 import Canvas from "../Canvas";
-import TokenInfo from "../TokenInfo";
-
-// Backend Imports
-import postFiles from '../../libs/postFiles';
-import getFiles from '../../libs/getFiles';
-import updateFile from '../../libs/updateFile';
-import deleteFiles from '../../libs/deleteFiles';
 
 function Map(props) {
     // List of game states
@@ -23,8 +14,8 @@ function Map(props) {
     const [gameState, SetGameState] = useState({ gameId: null, mapKeys: [], tokenKeys: [] });
 
     // User interface variables
-    const [TokenDrawerState, setTokenDrawerState] = useState("drawerClosed");
-    const [MapDrawerState, setMapDrawerState] = useState("drawerClosed");
+    const [tokenDrawerState, setTokenDrawerState] = useState(false);
+    const [mapDrawerState, setMapDrawerState] = useState(false);
     const [optionTrayState, setOptionTrayState] = useState(false);
     const [locked, setLocked] = useState([]);
 
@@ -34,170 +25,12 @@ function Map(props) {
     const [currentMap, setCurrentMap] = useState(null);
     const [mapScale, setMapScale] = useState(1);
     const [gridScale, setGridScale] = useState(50);
-    const [selectedToken, setSelectedToken] = useState(false)
     const [toDrop, setToDrop] = useState(null);
 
     useEffect(() => {
-        if (props.isTest)
-            prepareTest();
-
-        loadDB();
     }, []);
 
-
-   
-    // State object function. Returns an object with the correct attributes to match schema for backend.
-    function boardState(maps, tokens) {
-        const state = {
-            content: {
-                maps: maps,
-                tokens: tokens
-            }
-        }
-        return state;
-    }
-
-    // Backend file upload functions
-
-    // Fetches information from DB using the libs hook getFiles.
-    async function loadDB() {
-        if (props.isTest)
-            return;
-
-        try {
-            // getFiles is a lib function that queries backend for content
-            const games = await getFiles();
-
-            if (games[0]) {
-                // Stores information
-                setGameList(games);
-
-                // parses out that information into state
-                let newState = gameState;
-
-                newState.gameId = games[0].gameid;
-                newState.mapKeys = games[0].content.maps;
-                newState.tokenKeys = games[0].content.tokens;
-                SetGameState(newState);
-
-                // Fetches assets from backend and populates local data structures
-                for (let i = 0; i < gameState.mapKeys.length; ++i) {
-                    let file = await s3Get(gameState.mapKeys[i]);
-                    let img = new Image();
-                    img.src = file;
-
-                    let newMap = {
-                        img: img,
-                        key: gameState.mapKeys[i]
-                    }
-
-                    setMapList(mapList => [...mapList, newMap]);
-                }
-
-                for (let i = 0; i < gameState.tokenKeys.length; ++i) {
-                    let file = await s3Get(gameState.tokenKeys[i]);
-                    let img = new Image();
-                    img.src = file;
-
-                    let newToken = {
-                        img: img,
-                        key: gameState.tokenKeys[i]
-                    }
-
-                    setTokenList(tokenList => [...tokenList, newToken]);
-                }
-            }
-        } catch (e) {
-            console.log(e)
-        }
-    }
-
-    // onClick handler for map removal
-    async function deleteMap(newList, key) {
-        if (props.isTest) {
-            setMapList(newList);
-            return;
-        }
-        try {
-            let index = gameState.mapKeys.indexOf(key + "map");
-            if (index > -1) {
-                gameState.mapKeys.splice(index, 1);
-                // Array needs to be copied so when setMapList is called, the app rerenders.
-                newList.splice(index, 1);
-                setMapList(newList);
-            }
-            const newState = boardState(gameState.mapKeys, gameState.tokenKeys);
-            await deleteFiles(gameState.gameId, newState, key);
-        } catch (e) {
-            console.log(e);
-        }
-    }
-
-    // onClick handler for token removal
-    async function deleteToken(key) {
-
-        // If not logged in, delete works locally only.
-        if (props.isTest) {
-            let newList = [];
-            for (let i = 0; i < tokenList.length; i++) {
-                if (tokenList[i].key !== key) {
-                    newList.push(tokenList[i]);
-                }
-            }
-            setTokenList(newList);
-            return;
-        }
-
-        // If logged in, delete needs update DB
-        try {
-            let index = gameState.tokenKeys.indexOf(key);
-            if (index > -1) {
-                gameState.tokenKeys.splice(index, 1);
-
-                // Array needs to be copied so when setMapList is called, the app rerenders.
-                let newList = [...tokenList];
-                newList.splice(index, 1);
-                setTokenList(newList);
-            }
-
-            const newState = boardState(gameState.mapKeys, gameState.tokenKeys);
-            await deleteFiles(gameState.gameId, newState, key);
-        } catch (e) {
-            alert(e);
-        }
-    }
-
     // User interface functions
-
-    function tokenInformationHandler(target) {
-
-        let size = tokenList.length;
-        let index = -1;
-        for (let i = 0; i < size; ++i) {
-            if (tokenList[i].key === target)
-                index = i;
-        }
-
-        if (index === -1)
-            return;
-
-        if (tokenList[index].key === selectedToken.key)
-            setSelectedToken(false);
-        else
-            setSelectedToken(tokenList[index])
-    }
-
-    function updateTokenInfoHandler(newInfo) {
-        let newList = [...tokenList];
-        let size = newList.length;
-        for (let i = 0; i < size; ++i) {
-            if (newList[i].key === newInfo.key)
-                newList[i] = newInfo;
-        }
-
-        setTokenList(newList);
-    }
-
     function toggleOptionTray() {
         if (!locked.includes("options"))
             setOptionTrayState(!optionTrayState);
@@ -217,37 +50,28 @@ function Map(props) {
         if (!locked.includes("options"))
             setOptionTrayState(false);
 
-        if (!locked.includes("tokenInfo"))
-            setSelectedToken(false);
-
         setTokenDrawerState("drawerClosed");
         setMapDrawerState("drawerClosed");
     }
 
-    // Toggles visibility of token tray panel
-    function toggleTokenTray() {
+    // Toggles drawer state
+    function toggleDrawerState(type) {
+        switch (type) {
+            case 'token':
+                if (mapDrawerState)
+                    setMapDrawerState(!mapDrawerState);
 
-        if (MapDrawerState === "drawerOpen")
-            toggleMaps();
+                setTokenDrawerState(!tokenDrawerState);
+                break;
+            case 'map':
+                if (tokenDrawerState)
+                    setTokenDrawerState(!tokenDrawerState);
 
-        if (TokenDrawerState === "drawerClosed")
-            setTokenDrawerState("drawerDocked")
-        else
-            setTokenDrawerState("drawerClosed")
+                setMapDrawerState(!mapDrawerState);
+                break;
+            default:
+        }
     }
-
-    // Toggles visibility of map tray panel
-    function toggleMaps() {
-
-        if (TokenDrawerState === "drawerDocked")
-            toggleTokenTray();
-
-        if (MapDrawerState === "drawerClosed")
-            setMapDrawerState("drawerOpen")
-        else
-            setMapDrawerState("drawerClosed")
-    }
-
 
     // Canvas variable functions
     function changeMap(event) {
@@ -267,162 +91,12 @@ function Map(props) {
         setGridScale(scale);
     }
 
-
-    // Fetch file from user functions
-    async function uploadBackground(event) {
-
-        let reader = new FileReader();
-
-        const imageFiles = event.target.files;
-        let file = imageFiles[0];
-
-        // checkMapSize fails if file is too large 
-        if (!checkMapSize(file))
-            return;
-
-        if (mapList.length > 4) {
-            alert("You cannot have more than 5 maps uploaded during this stage of development.");
-            return;
-        }
-
-
-        let fileKey;
-        let gameId;
-
-        if (!gameList && !props.isTest) {
-            try {
-                fileKey = await s3Upload(file, file.type, "map");
-                gameId = await postFiles(boardState(gameState.mapKeys, gameState.tokenKeys));
-                gameState.gameId = gameId.gameid;
-                gameState.mapKeys = [fileKey]
-            } catch (e) {
-                alert(e);
-            }
-        } else {
-            if (!props.isTest) {
-                try {
-                    fileKey = await s3Upload(file, file.type, "map");
-                    let list = gameState.mapKeys;
-                    gameState.mapKeys = [...list, fileKey];
-                    await updateFile(boardState(gameState.mapKeys, gameState.tokenKeys), gameState.gameId);
-                } catch (e) {
-                    alert(e);
-                }
-            }
-        }
-
-
-        // This should only happen when props.isTesting is true
-        if (fileKey === undefined) {
-            let date = new Date();
-            fileKey = date.getTime();
-        }
-
-        reader.onload = () => {
-            let img = new Image();
-            img.src = reader.result;
-
-            let newMap = {
-                img: img,
-                key: fileKey
-            }
-
-            setMapList(mapList => [...mapList, newMap]);
-        }
-
-        reader.readAsDataURL(file);
-    }
-
-    async function uploadTokenHandler(event) {
-
-        const imageFiles = event.target.files;
-
-        let reader = new FileReader();
-        let file = imageFiles[0];
-
-        // checkTokenSize fails if file is too large 
-        if (!checkTokenSize(file))
-            return;
-
-        if (tokenList.length > 9) {
-            alert("You cannot have more than 10 tokens uploaded during this stage of development.");
-            return;
-        }
-
-        let fileKey;
-        let gameId;
-
-        if (!gameList && !props.isTest) {
-            try {
-                fileKey = await s3Upload(file, file.type, "token");
-                gameId = await postFiles(boardState(gameState.mapKeys, gameState.tokenKeys));
-                gameState.gameId = gameId.gameid;
-                gameState.tokenKeys = [fileKey]
-            } catch (e) {
-                alert(e);
-            }
-        } else {
-            if (!props.isTest) {
-                try {
-                    fileKey = await s3Upload(file, file.type, "token");
-                    let list = gameState.tokenKeys;
-                    gameState.tokenKeys = [...list, fileKey];
-                    await updateFile(boardState(gameState.mapKeys, gameState.tokenKeys), gameState.gameId);
-                } catch (e) {
-                    alert(e);
-                }
-            }
-        }
-
-        // This should only happen when props.isTesting is true
-        if (fileKey === undefined) {
-            let date = new Date();
-            fileKey = date.getTime();
-        }
-
-        reader.onload = () => {
-            let img = new Image();
-            img.src = reader.result;
-            let newToken = {
-                img: img,
-                key: fileKey,
-                name: "",
-                hp: { max: 0, min: 0 }
-            }
-            setTokenList(tokenList => [...tokenList, newToken]);
-        }
-
-        reader.readAsDataURL(file);
-    }
-
-    function checkMapSize(file) {
-        if (file && file.size > Constants.MAX_MAP_SIZE) {
-            alert(
-                `Please pick a file smaller than ${Constants.MAX_MAP_SIZE / 1000000
-                } MB.`
-            );
-            return 0;
-        }
-        return 1;
-    }
-
-    function checkTokenSize(file) {
-        if (file && file.size > Constants.MAX_TOKEN_SIZE) {
-            alert(
-                `Please pick a file smaller than ${Constants.MAX_TOKEN_SIZE / 8000
-                } kb.`
-            );
-            return 0;
-        }
-        return 1;
-    }
-
     function dragHandler(target) {
         setToDrop(target);
     }
 
     return (
-        <div className="canvas-container">
+        <React.Fragment>
             <Canvas
                 mode={props.mode}
                 gridScale={gridScale}
@@ -443,35 +117,23 @@ function Map(props) {
             />
             <ToolBar
                 mode={props.mode}
-                toggleTokens={toggleTokenTray}
-                toggleMaps={toggleMaps}
+                toggleDrawerState={toggleDrawerState}
                 toggleOptions={toggleOptionTray}
                 close={closeAll}
             />
-            <TokenDrawer
+            <Drawer
                 mode={props.mode}
-                state={TokenDrawerState}
-                getToken={uploadTokenHandler}
+                state={tokenDrawerState}
                 tokens={tokenList}
-                deleteToken={deleteToken}
-                tokenInformation={tokenInformationHandler}
                 dragHandler={dragHandler}
             />
-            <MapDrawer
+            <Drawer
                 mode={props.mode}
-                state={MapDrawerState}
-                getMap={uploadBackground}
-                maps={mapList} changeMap={changeMap}
-                deleteMap={deleteMap}
+                state={mapDrawerState}
+                maps={mapList}
+                changeMap={changeMap}
             />
-            <TokenInfo
-                mode={props.mode}
-                selected={selectedToken}
-                updateTokenInfo={updateTokenInfoHandler}
-                toggleLock={toggleLock}
-                setSelectedToken={setSelectedToken}
-            />
-        </div>
+        </React.Fragment>
     );
 }
 
