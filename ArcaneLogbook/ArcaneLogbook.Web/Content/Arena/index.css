@@ -372,8 +372,10 @@
 
 .route-link:active {
   background: #333;
-  -webkit-box-shadow: inset 10px 10px 6px #1d1d1d, inset -10px -10px 6px #272727;
-          box-shadow: inset 10px 10px 6px #1d1d1d, inset -10px -10px 6px #272727;
+  -webkit-box-shadow: inset 10px 10px 6px #1d1d1d,
+ inset -10px -10px 6px #272727;
+          box-shadow: inset 10px 10px 6px #1d1d1d,
+ inset -10px -10px 6px #272727;
 }
 
 .logout-button {

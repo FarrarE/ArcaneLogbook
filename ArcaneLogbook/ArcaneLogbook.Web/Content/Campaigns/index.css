@@ -2,8 +2,13 @@
     margin: 10rem;
 }
 
+#campaign-header{
+    display:flex;
+    justify-content: space-between;
+    padding:1rem;
+}
+
 .add-campaign{
-    position: fixed;
-    right:5rem;
-    top:5rem;
+    padding: 0 2rem;
+    border-radius: .5rem;
 }

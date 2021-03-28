@@ -13,7 +13,7 @@
 }
 
 .view{
-    margin-top:50px;
+    margin-top:70px;
 }
 
 
@@ -23,6 +23,28 @@ footer {
     width:100%;
     bottom: 0;
     color:white;
+}
+
+.nav-container{
+    display: flex;
+    flex-direction:row;
+}
+
+.nav-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .25rem;
+    background: #333;
+    padding: .5rem;
+    margin: .5rem;
+    margin-left: auto;
+}
+
+button {
+    border: none;
+    background: #333;
+    padding: .5rem;
 }
 
 
