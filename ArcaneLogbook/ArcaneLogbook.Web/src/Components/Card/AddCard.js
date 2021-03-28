@@ -17,24 +17,29 @@ function AddCard(props) {
         card.edition = event.target.value;
     }
 
-    function submit(){
+    function submit() {
         card.uuid = uuid();
         console.log(card);
         props.submit(card);
     }
 
     return (
-        <div>
-                <input
-                    type='text'
-                    onChange={titleHandler}
-                />
-                <input
-                    type='text'
-                    onChange={editionHandler}
-                />
+        <div className="addCard-container">
+            <h1>Campaign</h1>
+            <input
+                type='text'
+                onChange={titleHandler}
+                placeholder="Title"
+            />
+            <input
+                type='text'
+                onChange={editionHandler}
+                placeholder="Edition"
+            />
+            <div className="button-container">
                 <button onClick={props.close}>Cancel</button>
                 <button onClick={submit} >Submit</button>
+            </div>
         </div>
     )
 

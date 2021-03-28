@@ -11,3 +11,37 @@
     box-shadow: .1rem .1rem .5rem rgb(181, 199, 211),
                 -.1rem -.1rem .5rem rgb(181, 199, 211);
 }
+
+.addCard-container{
+    display: flex;
+    border-radius: 0.5rem;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: max-content;
+    height: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    z-index: 301;
+    font-weight: bold;
+    padding:2rem;
+    background-color: #222;
+}
+
+.addCard-container .button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top:2rem;
+    width:100%;
+}
+
+.addCard-container h1{
+    margin-bottom:2rem;
+}
