@@ -316,9 +316,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -338,12 +338,12 @@
   margin-bottom: auto;
   z-index: 301;
   font-weight: bold;
-  padding: 1rem;
+  padding: 1rem 2rem;
   background-color: #222;
 }
 
 .options .handle {
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
 }
 
 .route-link {
@@ -372,10 +372,8 @@
 
 .route-link:active {
   background: #333;
-  -webkit-box-shadow: inset 10px 10px 6px #1d1d1d,
- inset -10px -10px 6px #272727;
-          box-shadow: inset 10px 10px 6px #1d1d1d,
- inset -10px -10px 6px #272727;
+  -webkit-box-shadow: inset 10px 10px 6px #1d1d1d, inset -10px -10px 6px #272727;
+          box-shadow: inset 10px 10px 6px #1d1d1d, inset -10px -10px 6px #272727;
 }
 
 .logout-button {
@@ -391,22 +389,6 @@ input {
   display: none;
 }
 
-@media only screen and (max-width: 1300px) {
-  .options {
-    font-size: 1.5rem;
-  }
-  .options .logout-button span {
-    padding: 0.5rem;
-  }
-  .options .handle {
-    font-size: 4rem;
-  }
-  .options #help-icon {
-    top: 1.5rem;
-    right: 1rem;
-  }
-}
-
 /* Menu Bar */
 .menu-bar {
   display: -webkit-box;
@@ -416,25 +398,10 @@ input {
       -ms-flex-pack: justify;
           justify-content: space-between;
   cursor: pointer;
+  font-size: 2rem;
 }
 
 .menu-bar svg {
   margin: .5rem;
-}
-
-@media only screen and (max-width: 1300px) {
-  .options {
-    font-size: 1.5rem;
-  }
-  .options .logout-button span {
-    padding: 0.5rem;
-  }
-  .options .handle {
-    font-size: 4rem;
-  }
-  .options #help-icon {
-    top: 1.5rem;
-    right: 1rem;
-  }
 }
 /*# sourceMappingURL=index.css.map */
