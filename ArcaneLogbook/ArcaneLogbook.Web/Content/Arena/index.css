@@ -46,19 +46,20 @@
   display: -ms-flexbox;
   display: flex;
   border-radius: .5rem;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   left: 0;
   right: 0;
   top: 0;
   margin-left: auto;
   margin-right: auto;
   z-index: 100;
-  width: 15rem;
+  width: 17rem;
+  height: 5rem;
   font-size: 2rem;
   margin-top: 1rem;
   background-color: #222;
-  padding: 1rem;
 }
 
 .edit-icon {
@@ -93,7 +94,7 @@
   margin-right: auto;
   position: fixed;
   bottom: 0;
-  height: 12rem;
+  height: 15rem;
   z-index: 300;
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
@@ -340,6 +341,7 @@
   font-weight: bold;
   padding: 1rem 2rem;
   background-color: #222;
+  width: 17rem;
 }
 
 .options .handle {
@@ -397,11 +399,12 @@ input {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  cursor: pointer;
   font-size: 2rem;
+  width: 14rem;
 }
 
 .menu-bar svg {
   margin: .5rem;
+  cursor: pointer;
 }
 /*# sourceMappingURL=index.css.map */

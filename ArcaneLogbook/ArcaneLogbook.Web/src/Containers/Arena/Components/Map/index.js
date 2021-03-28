@@ -50,8 +50,8 @@ function Map(props) {
         if (!locked.includes("options"))
             setOptionTrayState(false);
 
-        setTokenDrawerState("drawerClosed");
-        setMapDrawerState("drawerClosed");
+        setTokenDrawerState(false);
+        setMapDrawerState(false);
     }
 
     // Toggles drawer state

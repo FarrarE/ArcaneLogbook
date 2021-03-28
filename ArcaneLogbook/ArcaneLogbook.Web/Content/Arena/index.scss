@@ -34,18 +34,18 @@
     position: absolute;
     display: flex;
     border-radius: .5rem;
-    justify-content: space-around;
+    justify-content: space-evenly;
     left: 0;
     right: 0;
     top: 0;
     margin-left: auto;
     margin-right: auto;
     z-index: 100;
-    width: 15rem;
+    width: 17rem;
+    height:5rem;
     font-size: 2rem;
     margin-top:1rem;
     background-color: #222;
-    padding:1rem;
 }
 .edit-icon{
     display:flex;
@@ -71,7 +71,7 @@
     margin-right: auto;
     position: fixed;
     bottom: 0;
-    height: 12rem;
+    height: 15rem;
     z-index: 300;
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
@@ -297,7 +297,7 @@
     font-weight: bold;
     padding:1rem 2rem;
     background-color: #222;
-
+    width:17rem;
     .handle{
         margin-bottom: 1rem;
     }
@@ -345,9 +345,10 @@ input {
 .menu-bar {
     display: flex;
     justify-content: space-between;
-    cursor:pointer;
     font-size: 2rem;
+    width:14rem;
     svg{
         margin:.5rem;
+        cursor:pointer;
     }
 }

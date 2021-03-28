@@ -18,7 +18,7 @@ function MenuBar(props) {
             if (props.type === 'options')
                 props.toggleOptions();
 
-            if(props.type === "tokenInfo")
+            if (props.type === "tokenInfo")
                 props.setSelectedToken(false);
         }
     }
@@ -26,17 +26,17 @@ function MenuBar(props) {
 
     return (
         <div className="menu-bar">
-            <div className="menu-bar" onClick={toggleLock}>
+            <div onClick={toggleLock}>
                 {locked ?
                     <AiFillLock style={{ color: "#2196f3" }} />
                     :
                     <AiFillUnlock />
                 }
             </div>
-            <div className="menu-bar">
+            <div>
                 <GiDragonSpiral />
             </div>
-            <div className="close-options menu-bar">
+            <div className="close-options">
                 <CgCloseR onClick={handleClose} />
             </div>
         </div>
