@@ -126,6 +126,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\BaseApiController.cs" />
     <Compile Include="Api\CampaignsController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -203,7 +204,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\About\" />
     <Folder Include="Content\Contact\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

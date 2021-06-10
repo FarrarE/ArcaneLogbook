@@ -1,5 +1,6 @@
 ﻿using ArcaneLogbook.Data.Models;
 using ArcaneLogbook.Data.Services;
+using ArcaneLogbook.Data.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +10,17 @@ using System.Web.Http;
 
 namespace ArcaneLogbook.Web.Api
 {
-    public class CampaignsController : ApiController
+    public class CampaignsController : BaseApiController
     {
-        private readonly ICampaignData db;
-        public CampaignsController()
-        {
-            db = new InMemoryCampaignData();
-        }
+        private readonly ApplicationService _applicationService;
 
-        public IEnumerable<Campaign> Get()
+        public CampaignsController() : this(
+            ApplicationService.Create(ApplicationDb.Create("connetion string"))
+        ){ }
+
+        public CampaignsController(ApplicationService applicationService)
         {
-            var model = db.GetAll();
-            return model;
+            _applicationService = applicationService;
         }
     }
 }

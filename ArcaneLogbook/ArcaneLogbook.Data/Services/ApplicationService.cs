@@ -7,7 +7,7 @@ using ArcaneLogbook.Data.Repository;
 
 namespace ArcaneLogbook.Data.Services
 {
-    class ApplicationService
+    public class ApplicationService
     {
         private readonly ApplicationDb _applicationDb;
 
@@ -16,9 +16,9 @@ namespace ArcaneLogbook.Data.Services
             _applicationDb = applicationDb;
         }
 
-        public static ApplicationService Create(ApplicationDb application)
+        public static ApplicationService Create(ApplicationDb applicationdb)
         {
-            return new ApplicationService(application);
+            return new ApplicationService(applicationdb);
         }
 
 

@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace ArcaneLogbook.Data.Repository
 {
-    public class ApplicationDb
+    public class FileDb
     {
         private readonly string _connectionString;
 
-        private ApplicationDb(string connectionString)
+        private FileDb(string connectionString)
         {
             _connectionString = connectionString;
         }
 
-        public static ApplicationDb Create(string connectionString)
+        public static FileDb Create(string connectionString)
         {
-            return new ApplicationDb(connectionString);
+            return new FileDb(connectionString);
         }
     }
 }
