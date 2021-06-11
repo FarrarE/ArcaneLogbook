@@ -66,8 +66,8 @@ function Campaigns(props) {
                     <h2>Campaigns</h2>
                     <button className="add-campaign" onClick={addButtonHandler} >Add</button>
                 </div>
-                {campaignList}
                 {addCardComponent}
+                {campaignList}
             </div>
     )
 }

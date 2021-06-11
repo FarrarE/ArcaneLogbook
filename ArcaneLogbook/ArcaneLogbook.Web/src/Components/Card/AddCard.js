@@ -24,25 +24,27 @@ function AddCard(props) {
     }
 
     return (
-        <div className="addCard-container">
-            <h1>Campaign</h1>
-            <input
-                type='text'
-                onChange={titleHandler}
-                placeholder="Title"
-            />
-            <input
-                type='text'
-                onChange={editionHandler}
-                placeholder="Edition"
-            />
-            <div className="button-container">
-                <button onClick={props.close}>Cancel</button>
-                <button onClick={submit} >Submit</button>
+        <React.Fragment>
+            <div className="backdrop" />
+            <div className="addCard-container">
+                <h1>Campaign</h1>
+                <input
+                    type='text'
+                    onChange={titleHandler}
+                    placeholder="Title"
+                />
+                <input
+                    type='text'
+                    onChange={editionHandler}
+                    placeholder="Edition"
+                />
+                <div className="button-container">
+                    <button onClick={props.close}>Cancel</button>
+                    <button onClick={submit} >Submit</button>
+                </div>
             </div>
-        </div>
+        </React.Fragment>
     )
-
 }
 
 export default AddCard;

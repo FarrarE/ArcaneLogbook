@@ -56,6 +56,16 @@ input{
     color:black;
 }
 
+.backdrop{
+    background: black;
+    opacity: 50%;
+    position:absolute;
+    left: 0;
+    top:0;
+    width:100vw;
+    height:100vh;
+}
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
