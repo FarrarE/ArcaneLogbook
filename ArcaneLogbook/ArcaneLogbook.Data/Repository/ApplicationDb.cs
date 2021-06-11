@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ArcaneLogbook.Data.Models;
+using ArcaneLogbook.Data.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,18 +8,17 @@ using System.Threading.Tasks;
 
 namespace ArcaneLogbook.Data.Repository
 {
-    public class ApplicationDb
+    class ApplicationDb : ICampaignData
     {
-        private readonly string _connectionString;
+        private readonly ApplicationDbContext db;
 
-        private ApplicationDb(string connectionString)
+        public ApplicationDb(ApplicationDbContext db)
         {
-            _connectionString = connectionString;
+            this.db = db;
         }
-
-        public static ApplicationDb Create(string connectionString)
+        public IEnumerable<Campaign> GetAll()
         {
-            return new ApplicationDb(connectionString);
+            throw new NotImplementedException();
         }
     }
 }

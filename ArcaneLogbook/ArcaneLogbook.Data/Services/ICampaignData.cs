@@ -10,4 +10,6 @@ namespace ArcaneLogbook.Data.Services
     {
         IEnumerable<Campaign> GetAll();
     }
+
+
 }
