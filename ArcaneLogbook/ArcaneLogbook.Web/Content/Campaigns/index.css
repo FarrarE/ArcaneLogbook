@@ -5,10 +5,5 @@
 #campaign-header{
     display:flex;
     justify-content: space-between;
-    padding:1rem;
-}
-
-.add-campaign{
-    padding: 0 2rem;
-    border-radius: .5rem;
+    padding:15px;
 }

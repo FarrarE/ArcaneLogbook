@@ -17,7 +17,7 @@ function Campaigns(props) {
 
     }, [campaigns]);
 
-    function init(){
+    function init() {
         setCampaignList(campaigns.map(campaign => createCampaign(campaign.Name, campaign.Edition, campaign.Id)));
         setIsLoading(false);
     }
@@ -53,22 +53,15 @@ function Campaigns(props) {
     }
 
     return (
-        isLoading ?
-            <div className="container view">
-                <div id="campaign-header">
-                    <h2>Campaigns</h2>
-                    <button className="add-campaign" onClick={addButtonHandler} >Add</button>
-                </div>
+        !isLoading &&
+        <div className="container view">
+            <div id="campaign-header">
+                <h2>Campaigns</h2>
+                <button onClick={addButtonHandler}>Add</button>
             </div>
-            :
-            <div className="container view">
-                <div id="campaign-header">
-                    <h2>Campaigns</h2>
-                    <button className="add-campaign" onClick={addButtonHandler} >Add</button>
-                </div>
-                {addCardComponent}
-                {campaignList}
-            </div>
+            {addCardComponent}
+            {campaignList}
+        </div>
     )
 }
 

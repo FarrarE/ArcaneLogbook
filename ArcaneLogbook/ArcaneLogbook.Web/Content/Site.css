@@ -45,7 +45,7 @@ footer {
 button {
     border: none;
     background: #333;
-    padding: .5rem;
+    padding: 10px 15px;
 }
 
 button:hover{
