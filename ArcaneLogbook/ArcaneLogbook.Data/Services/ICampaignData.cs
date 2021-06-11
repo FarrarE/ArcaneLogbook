@@ -9,6 +9,7 @@ namespace ArcaneLogbook.Data.Services
     public interface ICampaignData
     {
         IEnumerable<Campaign> GetAll();
+        void Add(Campaign campaign);
     }
 
 

@@ -1,4 +1,5 @@
-﻿using ArcaneLogbook.Data.Services;
+﻿using ArcaneLogbook.Data.Models;
+using ArcaneLogbook.Data.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,20 @@ namespace ArcaneLogbook.Web.Controllers.Api
             catch (Exception ex)
             {
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
+            }
+        }
+
+        [HttpPost, Route("postCampaign")]
+        public IHttpActionResult Post([FromBody] Campaign campaign)
+        {
+            try
+            {
+                _db.Add(campaign);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
             }
         }
     }

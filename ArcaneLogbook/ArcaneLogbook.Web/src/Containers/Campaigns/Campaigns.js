@@ -3,6 +3,7 @@ import Card from '../../Components/Card';
 import AddCard from '../../Components/Card/AddCard';
 
 import getCampaigns from '../../hooks/getCampaigns.js';
+import postCampaign from '../../api/api';
 
 function Campaigns(props) {
     const [isLoading, setIsLoading] = useState(true);
@@ -41,15 +42,12 @@ function Campaigns(props) {
             id={id}
             onClick={goTo}
             key={title + id} />
-        console.log("New Campaign Created", newCampaign)
         return newCampaign;
     }
 
     function addCampaign(campaign) {
-        var newCampaign = createCampaign(campaign.title, campaign.edition, campaign.uuid);
-
         closeAddCard();
-        setCampaignList([...campaignList, newCampaign]);
+        postCampaign(campaign.uuid, campaign.title, campaign.edition, "1");
     }
 
     return (

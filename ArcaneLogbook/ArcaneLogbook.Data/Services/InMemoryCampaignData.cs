@@ -23,5 +23,10 @@ namespace ArcaneLogbook.Data.Services
         {
             return campaigns.OrderBy( campaign => campaign.Id);
         }
+
+        public void Add(Campaign campaign)
+        {
+            campaigns.Add(campaign);
+        }
     }
 }

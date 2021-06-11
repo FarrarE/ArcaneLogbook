@@ -16,6 +16,12 @@ namespace ArcaneLogbook.Data.Repository
         {
             this.db = db;
         }
+
+        public void Add(Campaign campaign)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Campaign> GetAll()
         {
             throw new NotImplementedException();
