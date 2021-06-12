@@ -8,23 +8,24 @@ using System.Threading.Tasks;
 
 namespace ArcaneLogbook.Data.Repository
 {
-    class ApplicationDb : ICampaignData
+    public class CampaignService : ICampaignData
     {
-        private readonly ApplicationDbContext db;
+        private readonly CampaignServiceContext db;
 
-        public ApplicationDb(ApplicationDbContext db)
+        public CampaignService(CampaignServiceContext db)
         {
             this.db = db;
         }
 
         public void Add(Campaign campaign)
         {
-            throw new NotImplementedException();
+            db.Campaigns.Add(campaign);
+            db.SaveChanges();
         }
 
         public IEnumerable<Campaign> GetAll()
         {
-            throw new NotImplementedException();
+            return db.Campaigns;
         }
     }
 }

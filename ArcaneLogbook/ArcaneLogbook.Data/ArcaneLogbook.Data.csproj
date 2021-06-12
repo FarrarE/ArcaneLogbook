@@ -54,14 +54,16 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Campaign.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\ApplicationDb.cs" />
-    <Compile Include="Services\ApplicationDbContext.cs" />
+    <Compile Include="Services\CampaignService.cs" />
+    <Compile Include="Services\CampaignServiceContext.cs" />
     <Compile Include="Services\ICampaignData.cs" />
-    <Compile Include="Services\InMemoryCampaignData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

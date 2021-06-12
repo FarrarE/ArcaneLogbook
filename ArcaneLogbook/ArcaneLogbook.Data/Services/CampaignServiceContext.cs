@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ArcaneLogbook.Data.Services
 {
-    class ApplicationDbContext : DbContext
+    public class CampaignServiceContext : DbContext
     {
         public DbSet<Campaign> Campaigns { get; set; }
     }

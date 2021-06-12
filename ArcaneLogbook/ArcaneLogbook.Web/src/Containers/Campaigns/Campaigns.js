@@ -45,9 +45,10 @@ function Campaigns(props) {
         return newCampaign;
     }
 
-    function addCampaign(campaign) {
+    function addCampaign({uuid, title, edition}) {
         closeAddCard();
-        postCampaign(campaign.uuid, campaign.title, campaign.edition, "1");
+        setCampaignList([...campaignList, createCampaign(title, edition, uuid)])
+        postCampaign(uuid, title, edition, "1");
     }
 
     return (

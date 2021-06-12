@@ -1,4 +1,5 @@
 ﻿using ArcaneLogbook.Data.Models;
+using ArcaneLogbook.Data.Repository;
 using ArcaneLogbook.Data.Services;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,11 @@ namespace ArcaneLogbook.Web.Controllers.Api
     [RoutePrefix("api/campaigns")]
     public class CampaignsApiController : ApiController
     {
-        private readonly InMemoryCampaignData _db;
+        private readonly CampaignService _db;
 
         public CampaignsApiController()
         {
-            _db = new InMemoryCampaignData();
+            _db = new CampaignService(new CampaignServiceContext());
         }
 
         [HttpGet, Route("getcampaigns")]
