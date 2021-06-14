@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from "../../Components/Navbar";
 import Card from '../../Components/Card';
 import AddCard from '../../Components/Card/AddCard';
 
@@ -19,6 +20,9 @@ function Campaigns(props) {
     }, [campaigns]);
 
     function init() {
+        if(campaigns.Message === "An error has occurred.")
+            return;
+            
         setCampaignList(campaigns.map(campaign => createCampaign(campaign.Name, campaign.Edition, campaign.Id)));
         setIsLoading(false);
     }
@@ -52,6 +56,8 @@ function Campaigns(props) {
     }
 
     return (
+        <React.Fragment>
+        <Navbar />
         !isLoading &&
         <div className="container view">
             <div id="campaign-header">
@@ -59,8 +65,10 @@ function Campaigns(props) {
                 <button onClick={addButtonHandler}>Add</button>
             </div>
             {addCardComponent}
-            {campaignList}
+            {campaignList.length > 0 && campaignList }
         </div>
+        </React.Fragment>
+
     )
 }
 

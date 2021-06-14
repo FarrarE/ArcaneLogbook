@@ -25,7 +25,9 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "fabric": "^4.1.0",
+    "react-bootstrap": "^1.6.1",
     "react-draggable": "^4.4.3",
     "react-icons": "^3.11.0",
     "uuid": "^8.3.2"

@@ -209,7 +209,7 @@
     <Content Include="Views\Arena\Index.cshtml" />
     <Content Include="Views\Campaigns\Campaign.cshtml" />
     <Content Include="Views\Characters\PlayerCharacters.cshtml" />
-    <Content Include="Views\Characters\NonPlayerCharacter.cshtml" />
+    <Content Include="Views\Characters\NonPlayerCharacters.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

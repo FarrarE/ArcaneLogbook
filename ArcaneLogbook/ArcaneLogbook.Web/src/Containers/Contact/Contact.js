@@ -1,12 +1,16 @@
 import React from 'react';
+import Navbar from '../../Components/Navbar';
 
 function Contact(props) {
     return (
-        <div className="view">
-            <div className="content">
-                <h1>Contact</h1>
+        <React.Fragment>
+            <Navbar />
+            <div className="view">
+                <div className="content">
+                    <h1>Contact</h1>
+                </div>
             </div>
-        </div>
+        </React.Fragment>
     )
 }
 
