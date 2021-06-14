@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace ArcaneLogbook.Data.Models
 {
-    public class Campaign
+    public class Ability
     {
-        public string Id { get; set; }
         public string Name { get; set; }
-        public string Edition { get; set; }
-        public string UserId { get; set; }
-        public List<Map> Maps { get; set; }
+        public string Description { get; set; }
     }
 }
