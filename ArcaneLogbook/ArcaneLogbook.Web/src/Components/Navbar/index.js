@@ -2,35 +2,24 @@ import React from 'react';
 import { getSiteRoot } from "../../helpers/common";
 
 function Navbar(props) {
+    var siteRoot = getSiteRoot();
 
     return (
-        <div className="navbar navbar-inverse navbar-fixed-top">
-            <div className="container nav-container">
-                <div className="navbar-header">
-                    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                    </button>
-                    <a className="navbar-brand" href={getSiteRoot()}>Arcane Logbook</a>
-                </div>
-                <div className="navbar-collapse collapse">
-                    <ul className="nav navbar-nav">
-                        <li><a href={getSiteRoot() + "Campaigns"}>Campaigns</a></li>
-                        <li className="dropdown-submenu">
-                            <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span className="nav-label">Characters</span><span className="caret"></span></a>
-                            <ul className="dropdown-menu">
-                                <li><a href="#">Player Characters</a></li>
-                                <li><a href="#">NPCs</a></li>
-                            </ul>
-                        </li>
-                        <li></li>
-                        <li><a href={getSiteRoot() + "Arena"}>Arena</a></li>
-                        <li><a href={getSiteRoot() + "About"}>About</a></li>
-                        <li><a href={getSiteRoot() + "Contact"}>Contact</a></li>
-                    </ul>
+        <div className="navbar">
+            <a href={siteRoot}>Arcane Logbook</a>
+            <a href={siteRoot + "Campaigns"}>Campaigns</a>
+            <div className="dropdown">
+                <button className="dropbtn">Characters
+                    <i className="fa fa-caret-down"></i>
+                </button>
+                <div className="dropdown-content">
+                    <a href={siteRoot + "PlayerCharacters"}>Player Characters</a>
+                    <a href={siteRoot + "NonPlayercharacters"}>NPCs</a>
                 </div>
             </div>
+            <a href={siteRoot + "Arena"}>Arena</a>
+            <a href={siteRoot + "About"}>About</a>
+            <a href={siteRoot + "Contact"}>Contact</a>
         </div>
     )
 }

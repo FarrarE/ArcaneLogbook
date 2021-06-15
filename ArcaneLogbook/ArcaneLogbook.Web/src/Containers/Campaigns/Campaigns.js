@@ -20,9 +20,9 @@ function Campaigns(props) {
     }, [campaigns]);
 
     function init() {
-        if(campaigns.Message === "An error has occurred.")
+        if (campaigns.Message === "An error has occurred.")
             return;
-            
+
         setCampaignList(campaigns.map(campaign => createCampaign(campaign.Name, campaign.Edition, campaign.Id)));
         setIsLoading(false);
     }
@@ -49,7 +49,7 @@ function Campaigns(props) {
         return newCampaign;
     }
 
-    function addCampaign({uuid, title, edition}) {
+    function addCampaign({ uuid, title, edition }) {
         closeAddCard();
         setCampaignList([...campaignList, createCampaign(title, edition, uuid)])
         postCampaign(uuid, title, edition, "1");
@@ -57,16 +57,16 @@ function Campaigns(props) {
 
     return (
         <React.Fragment>
-        <Navbar />
-        !isLoading &&
-        <div className="container view">
-            <div id="campaign-header">
-                <h2>Campaigns</h2>
-                <button onClick={addButtonHandler}>Add</button>
-            </div>
-            {addCardComponent}
-            {campaignList.length > 0 && campaignList }
-        </div>
+            <Navbar />
+            {!isLoading &&
+                <div className="container view">
+                    <div id="campaign-header">
+                        <h2>Campaigns</h2>
+                        <button onClick={addButtonHandler}>Add</button>
+                    </div>
+                    {addCardComponent}
+                    {campaignList.length > 0 && campaignList}
+                </div>}
         </React.Fragment>
 
     )
