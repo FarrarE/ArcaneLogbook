@@ -2,6 +2,13 @@
   display: none;
 }
 
+.card:hover {
+  border-color: #86b7fe;
+  outline: 0;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
 .card:hover button {
   display: -webkit-box;
   display: -ms-flexbox;
