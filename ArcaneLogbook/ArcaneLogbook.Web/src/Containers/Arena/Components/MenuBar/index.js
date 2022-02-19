@@ -25,7 +25,7 @@ function MenuBar(props) {
 
 
     return (
-        <div className="menu-bar">
+        <div>
             <div onClick={toggleLock}>
                 {locked ?
                     <AiFillLock style={{ color: "#2196f3" }} />

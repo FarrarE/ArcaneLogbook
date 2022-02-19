@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AACI,KADC,CACD,MAAM,CAAC;EACH,OAAO,EAAE,IAAI;CAChB;;AAGL,AACI,KADC,AAAA,MAAM,CACP,MAAM,CAAA;EACF,OAAO,EAAE,IAAI;CAChB;;AAGL,AAAA,CAAC,CAAA;EACG,KAAK,EAAE,gBAAgB;CAC1B;;AACD,AAAA,CAAC,AAAA,MAAM,CAAA;EACH,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "theme-light.scss",
+        "_common.scss"
+    ],
+    "names": [],
+    "file": "theme-light.css"
+}

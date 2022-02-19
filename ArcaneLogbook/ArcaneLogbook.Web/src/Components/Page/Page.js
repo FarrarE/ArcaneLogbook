@@ -16,7 +16,7 @@ export default function Page({ children }) {
     return (
         <React.Fragment>
             <NavBar />
-            <div className='container mt-3 p-3 shadow-sm rounded'>
+            <div className='container mt-3 p-3 rounded'>
                 {children}
             </div>
         </React.Fragment>

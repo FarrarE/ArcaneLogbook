@@ -4,3 +4,7 @@ export function getSiteRoot(){
 
     return baseUrl;
 }
+
+export function map(set){
+    return set.map
+}

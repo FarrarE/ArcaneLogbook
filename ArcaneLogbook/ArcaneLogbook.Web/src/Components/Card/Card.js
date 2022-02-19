@@ -1,14 +1,37 @@
 import React from 'react';
-import { GiEyeTarget, GiDeathSkull } from "react-icons/gi";
-export default function Card(){
+
+
+export function CardHeader({ title, subtitle, children }) {
+    return <div className='d-flex flex-column align-items-center'>
+        <h5 className="card-title">{children}{title}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{subtitle}</h6>
+    </div>
+}
+
+export function CardBody({ children }) {
     return (
-        <div className='d-flex justify-content-between flex-wrap'>
-            <div className="card shadow-sm" style={{ width: '18rem' }}>
+        <p className='card-text'>
+            {children}
+        </p>
+    )
+}
+
+export function CardFooter({ className, children }) {
+    return <div className={className}>{children}</div>
+}
+
+export function CardActions({ children }) {
+    return <div className='d-flex h-100 p-2 justify-content-around flex-column position-absolute top-0 end-0'>
+        {children}
+    </div>
+}
+
+export default function Card({ children }) {
+    return (
+        <div className='d-flex justify-content-between flex-wrap position-relative'>
+            <div className="card shadow-sm flex-grow-1" >
                 <div className="card-body">
-                    <h5 className="card-title">Character Name</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <button type="button" className="btn btn-sm btn-outline-primary shadow-sm me-2"><GiEyeTarget />&ensp;View</button>
-                    <button type="button" className="btn btn-sm btn-outline-danger shadow-sm"><GiDeathSkull />&ensp;Delete</button>
+                    {children}
                 </div>
             </div>
         </div>
