@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from "../../Components/Navbar";
 import Card from '../../Components/Card';
-import AddCard from '../../Components/Card/AddCard';
-
 import getCampaigns from '../../hooks/getCampaigns.js';
 import postCampaign from '../../api/api';
 

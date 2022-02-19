@@ -11,10 +11,10 @@ namespace ArcaneLogbook.Web.Controllers
         // GET: Characters
         public ActionResult Index()
         {
-            return View("PlayerCharacters");
+            return View();
         }
 
-        public ActionResult NonPlayerCharacters()
+        public ActionResult Npcs()
         {
             return View();
         }

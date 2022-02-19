@@ -2,6 +2,11 @@ const path = require("path");
 
 module.exports = {
     mode: "development",
+    resolve: {
+        alias: {
+            Components: path.resolve(__dirname, 'src/Components/'),
+        }
+    },
     entry: {
         home: "./src/Containers/Home/index.js",
         about: "./src/Containers/About/index.js",
@@ -9,6 +14,7 @@ module.exports = {
         campaigns: "./src/Containers/Campaigns/index.js",
         campaign: "./src/Containers/Campaign/index.js",
         arena: "./src/Containers/Arena/index.js",
+        characters: "./src/Containers/Characters/index.js"
     },
     output: {
         path: path.resolve(__dirname, "./dist"),

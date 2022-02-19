@@ -1,6 +1,6 @@
 ﻿using ArcaneLogbook.Data.Models;
 using ArcaneLogbook.Data.Repository;
-using ArcaneLogbook.Data.Services;
+using ArcaneLogbook.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +13,12 @@ namespace ArcaneLogbook.Web.Controllers.Api
     [RoutePrefix("api/campaigns")]
     public class CampaignsApiController : ApiController
     {
-        private readonly CampaignService _db;
+        private readonly CampaignDB _db;
 
         public CampaignsApiController()
         {
-            _db = new CampaignService(new CampaignServiceContext());
+            //_db = new CampaignService(new CampaignServiceContext());
+            _db = new CampaignDB();
         }
 
         [HttpGet, Route("getcampaigns")]
@@ -28,25 +29,12 @@ namespace ArcaneLogbook.Web.Controllers.Api
             {
                 var campaignList = _db.GetAll();
 
+
                 return Request.CreateResponse(HttpStatusCode.OK, campaignList);
             }
             catch (Exception ex)
             {
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
-            }
-        }
-
-        [HttpPost, Route("postCampaign")]
-        public IHttpActionResult Post([FromBody] Campaign campaign)
-        {
-            try
-            {
-                _db.Add(campaign);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
             }
         }
     }

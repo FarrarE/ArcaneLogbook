@@ -150,18 +150,31 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Arena\index.css" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Campaigns\index.css" />
-    <Content Include="Content\Components\card.css" />
-    <Content Include="Content\Home\index.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="package-lock.json" />
@@ -175,6 +188,28 @@
     <Content Include="src\Components\Home\Home.js" />
     <Content Include="src\Components\Home\index.js" />
     <Content Include="webpack.config.js" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\config\webpack.config.js" />
     <Content Include="Scripts\dist\index.js" />
@@ -208,23 +243,17 @@
     <Content Include="Views\Campaigns\Index.cshtml" />
     <Content Include="Views\Arena\Index.cshtml" />
     <Content Include="Views\Campaigns\Campaign.cshtml" />
-    <Content Include="Views\Characters\PlayerCharacters.cshtml" />
-    <Content Include="Views\Characters\NonPlayerCharacters.cshtml" />
+    <Content Include="Views\Characters\Index.cshtml" />
+    <Content Include="Views\Characters\Npcs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\About\" />
-    <Folder Include="Content\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
@@ -233,6 +262,10 @@
     <ProjectReference Include="..\ArcaneLogbook.Data\ArcaneLogbook.Data.csproj">
       <Project>{499805c5-31d7-4ae5-9335-8010dda7b43e}</Project>
       <Name>ArcaneLogbook.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArcaneLogbook.Domain\ArcaneLogbook.Domain.csproj">
+      <Project>{43363c6b-1265-415b-bcad-8e0685c0f155}</Project>
+      <Name>ArcaneLogbook.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

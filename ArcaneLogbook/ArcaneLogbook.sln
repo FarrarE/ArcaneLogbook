@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcaneLogbook.Web", "Arcane
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcaneLogbook.Data", "ArcaneLogbook.Data\ArcaneLogbook.Data.csproj", "{499805C5-31D7-4AE5-9335-8010DDA7B43E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcaneLogbook.Services", "ArcaneLogbook.Services\ArcaneLogbook.Services.csproj", "{95DD79EA-DC1A-4308-BA17-BD5E6511FF7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcaneLogbook.Domain", "ArcaneLogbook.Domain\ArcaneLogbook.Domain.csproj", "{43363C6B-1265-415B-BCAD-8E0685C0F155}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{499805C5-31D7-4AE5-9335-8010DDA7B43E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{499805C5-31D7-4AE5-9335-8010DDA7B43E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{499805C5-31D7-4AE5-9335-8010DDA7B43E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95DD79EA-DC1A-4308-BA17-BD5E6511FF7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95DD79EA-DC1A-4308-BA17-BD5E6511FF7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95DD79EA-DC1A-4308-BA17-BD5E6511FF7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95DD79EA-DC1A-4308-BA17-BD5E6511FF7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43363C6B-1265-415B-BCAD-8E0685C0F155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43363C6B-1265-415B-BCAD-8E0685C0F155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43363C6B-1265-415B-BCAD-8E0685C0F155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43363C6B-1265-415B-BCAD-8E0685C0F155}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
