@@ -245,6 +245,7 @@
     <Content Include="Views\Campaigns\Campaign.cshtml" />
     <Content Include="Views\Characters\Index.cshtml" />
     <Content Include="Views\Characters\Npcs.cshtml" />
+    <Content Include="Views\Characters\CharacterProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

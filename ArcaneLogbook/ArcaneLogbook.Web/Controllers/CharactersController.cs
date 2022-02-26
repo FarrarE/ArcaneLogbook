@@ -18,5 +18,10 @@ namespace ArcaneLogbook.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult CharacterProfile()
+        {
+            return View();
+        }
     }
 }

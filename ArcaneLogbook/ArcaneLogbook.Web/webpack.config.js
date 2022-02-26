@@ -14,7 +14,8 @@ module.exports = {
         campaigns: "./src/Containers/Campaigns/index.js",
         campaign: "./src/Containers/Campaign/index.js",
         arena: "./src/Containers/Arena/index.js",
-        characters: "./src/Containers/Characters/index.js"
+        characters: "./src/Containers/Characters/index.js",
+        characterProfile: "./src/Containers/CharacterProfile/index.js"
     },
     output: {
         path: path.resolve(__dirname, "./dist"),

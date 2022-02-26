@@ -1,12 +1,18 @@
 @charset "UTF-8";
+body,
+#root {
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
 .card button {
   display: none;
 }
 
 .card:hover {
   outline: 0;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(205, 127, 50, 0.25) !important;
+          box-shadow: 0 0 0 0.25rem rgba(205, 127, 50, 0.25) !important;
 }
 
 .card:hover button {
@@ -21,6 +27,11 @@ a {
 
 a:hover {
   color: #CD7F32;
+}
+
+.icon-card-selected {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(205, 127, 50, 0.25);
+          box-shadow: 0 0 0 0.25rem rgba(205, 127, 50, 0.25);
 }
 
 .grid-col-2 {
@@ -3542,11 +3553,13 @@ textarea.form-control-lg {
 .btn-outline {
   color: #CD7F32;
   border: 1px solid rgba(0, 0, 0, 0.125);
+  background: white;
 }
 
 .btn-outline-primary {
   color: #CD7F32;
   border-color: #CD7F32;
+  background: white;
 }
 
 .btn-outline:hover {
@@ -3584,7 +3597,8 @@ textarea.form-control-lg {
 
 .btn-outline-secondary {
   color: #6c757d;
-  border-color: #6c757d;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  background: white;
 }
 
 .btn-outline-secondary:hover {
@@ -3617,6 +3631,7 @@ textarea.form-control-lg {
 .btn-outline-success {
   color: #198754;
   border-color: #198754;
+  background: white;
 }
 
 .btn-outline-success:hover {
@@ -3649,6 +3664,7 @@ textarea.form-control-lg {
 .btn-outline-info {
   color: #0dcaf0;
   border-color: #0dcaf0;
+  background: white;
 }
 
 .btn-outline-info:hover {
@@ -3681,6 +3697,7 @@ textarea.form-control-lg {
 .btn-outline-warning {
   color: #ffc107;
   border-color: #ffc107;
+  background: white;
 }
 
 .btn-outline-warning:hover {
@@ -3713,6 +3730,7 @@ textarea.form-control-lg {
 .btn-outline-danger {
   color: #dc3545;
   border-color: #dc3545;
+  background: white;
 }
 
 .btn-outline-danger:hover {
