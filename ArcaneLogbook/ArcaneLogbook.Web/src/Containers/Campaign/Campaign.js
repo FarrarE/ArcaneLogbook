@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from '../../Components/Card';
 
 function Campaign(props) {
     return (

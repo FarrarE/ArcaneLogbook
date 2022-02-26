@@ -10,33 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/Components/Card/Card.js":
-/*!*************************************!*\
-  !*** ./src/Components/Card/Card.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"CardHeader\": () => (/* binding */ CardHeader),\n/* harmony export */   \"CardBody\": () => (/* binding */ CardBody),\n/* harmony export */   \"CardFooter\": () => (/* binding */ CardFooter),\n/* harmony export */   \"CardActions\": () => (/* binding */ CardActions),\n/* harmony export */   \"default\": () => (/* binding */ Card)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nfunction CardHeader({\n  title,\n  subtitle,\n  children\n}) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"d-flex flex-column align-items-center\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"h5\", {\n    className: \"card-title\"\n  }, children, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"h6\", {\n    class: \"card-subtitle mb-2 text-muted\"\n  }, subtitle));\n}\nfunction CardBody({\n  children\n}) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", {\n    className: \"card-text\"\n  }, children);\n}\nfunction CardFooter({\n  className,\n  children\n}) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: className\n  }, children);\n}\nfunction CardActions({\n  children\n}) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"d-flex h-100 p-2 justify-content-around flex-column position-absolute top-0 end-0\"\n  }, children);\n}\nfunction Card({\n  children\n}) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"d-flex justify-content-between flex-wrap position-relative\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"card shadow-sm flex-grow-1\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"card-body\"\n  }, children)));\n}\n\n//# sourceURL=webpack://arcanelogbook.web/./src/Components/Card/Card.js?");
-
-/***/ }),
-
-/***/ "./src/Components/Card/index.js":
-/*!**************************************!*\
-  !*** ./src/Components/Card/index.js ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__),\n/* harmony export */   \"CardHeader\": () => (/* reexport safe */ _Card__WEBPACK_IMPORTED_MODULE_0__.CardHeader),\n/* harmony export */   \"CardBody\": () => (/* reexport safe */ _Card__WEBPACK_IMPORTED_MODULE_0__.CardBody),\n/* harmony export */   \"CardFooter\": () => (/* reexport safe */ _Card__WEBPACK_IMPORTED_MODULE_0__.CardFooter),\n/* harmony export */   \"CardActions\": () => (/* reexport safe */ _Card__WEBPACK_IMPORTED_MODULE_0__.CardActions)\n/* harmony export */ });\n/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Card */ \"./src/Components/Card/Card.js\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Card__WEBPACK_IMPORTED_MODULE_0__.default);\n\n\n//# sourceURL=webpack://arcanelogbook.web/./src/Components/Card/index.js?");
-
-/***/ }),
-
 /***/ "./src/Containers/Campaign/Campaign.js":
 /*!*********************************************!*\
   !*** ./src/Containers/Campaign/Campaign.js ***!
   \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _Components_Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Card */ \"./src/Components/Card/index.js\");\n\n\n\nfunction Campaign(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"container view\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    id: \"campaign-header\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"h2\", null, props.id, \" Test\")));\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Campaign);\n\n//# sourceURL=webpack://arcanelogbook.web/./src/Containers/Campaign/Campaign.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nfunction Campaign(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"container view\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    id: \"campaign-header\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"h2\", null, props.id, \" Test\")));\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Campaign);\n\n//# sourceURL=webpack://arcanelogbook.web/./src/Containers/Campaign/Campaign.js?");
 
 /***/ }),
 

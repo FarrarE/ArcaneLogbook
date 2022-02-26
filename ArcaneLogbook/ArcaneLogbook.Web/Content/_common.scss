@@ -1,21 +1,41 @@
+@import './bootstrap/colors';
+
 .card {
     button {
         display: none;
     }
 }
 
-.card:hover{
-    border-color: #86b7fe;
+.card:hover {
     outline: 0;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    button{
+
+    button {
         display: flex;
     }
 }
 
-a{
+a {
     color: black !important;
 }
-a:hover{
-    color: blue;
+
+a:hover {
+    color: $primary;
+}
+
+
+
+// Grid
+
+
+.grid-col-2 {
+    grid-template-columns: 50% 50%;
+}
+
+.grid-col-3 {
+    grid-template-columns: 33.3% 33.3% 33.3%;
+}
+
+.grid-col-4 {
+    grid-template-columns: 25% 25% 25% 25%;
 }

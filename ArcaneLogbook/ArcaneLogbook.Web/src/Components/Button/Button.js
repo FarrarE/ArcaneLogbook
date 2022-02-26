@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 export default function Button({ className, children, color, toggle, target, dismiss }) {
     let buttonClass;
     switch (color) {
+        case 'primary':
+            buttonClass = 'btn btn-sm btn-outline-primary shadow-sm';
+            break;
         case 'secondary':
             buttonClass = 'btn btn-sm btn-outline-secondary shadow-sm';
             break;
@@ -14,7 +17,7 @@ export default function Button({ className, children, color, toggle, target, dis
             buttonClass = 'btn btn-sm btn-outline-dark shadow-sm';
             break;
         default:
-            buttonClass = 'btn btn-sm btn-outline-primary shadow-sm';
+            buttonClass = 'btn btn-sm btn-outline shadow-sm';
             break;
     }
 
@@ -22,7 +25,7 @@ export default function Button({ className, children, color, toggle, target, dis
     return (!!toggle ?
         <button
             type="button"
-            className={buttonClass}
+            className={`${buttonClass} ${className}`} 
             data-bs-toggle={toggle}
             data-bs-target={target}>
             {children}
@@ -37,6 +40,6 @@ Button.PropTypes = {
 }
 
 Button.defaultProps = {
-    color: 'primary',
+    color: 'default',
     dismiss: ''
 }
