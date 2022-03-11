@@ -1,63 +1,28 @@
 import React, { useEffect } from 'react';
 import { getSiteRoot } from '../../helpers/common';
 import { Dropdown as BsDropdown } from 'bootstrap';
-import { GiBookCover } from "react-icons/gi";
+import { GiBookCover, GiSwordman, GiCrossedSwords, GiBookmark, GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineHome } from "react-icons/ai";
+import { GrGroup } from "react-icons/gr";
 import Button from 'Components/Button';
-
-function NavItem({ href, children, dropdown }) {
-    return dropdown ?
-        <li className="nav-item dropdown text-black">
-            {children}
-        </li>
-        :
-        <li className="nav-item">
-            <a className="nav-link text-black" href={href}>{children}</a>
-        </li>
-}
-
-function DropdownMenu({ title, children }) {
-    return (
-        <React.Fragment>
-            <a className="nav-link text-black" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{title}</a>
-            <ul className="dropdown-menu shadow-sm">
-                {children}
-            </ul>
-        </React.Fragment>
-    )
-}
-
-function DropdownItem({ href, children }) {
-    return <li><a className="dropdown-item" href={href}>{children}</a></li>
-}
-
-function User() {
-    return (
-        <div className='d-flex justify-content-end align-items-center' style={{width: '5rem'}}>
-            <Button>Login</Button>
-        </div>
-    )
-}
-
+const navItemClass = 'hover-bg-primary ps-3 py-2 fs-4 d-flex align-items-center'
+AiOutlineHome
 function Navbar(props) {
     return (
-        <div className='nav navbar-light justify-content-between p-2'>
-            <div style={{width: '5rem'}}></div>
-            <ul className="nav d-flex flex-row">
-                <a className="navbar-brand" href={getSiteRoot()}>
-                    <GiBookCover />&ensp;
-                    Arcane Logbook
-                </a>
-                <NavItem href={getSiteRoot() + "Campaigns"}>Campaigns</NavItem>
-                <NavItem dropdown>
-                    <DropdownMenu title='Characters'>
-                        <DropdownItem href={getSiteRoot() + "Characters"}>Player Characters</DropdownItem>
-                        <DropdownItem href={getSiteRoot() + "Characters/Npcs"}>NPC</DropdownItem>
-                    </DropdownMenu>
-                </NavItem>
-                <NavItem href={getSiteRoot() + "Arena"}>Arena</NavItem>
-                <NavItem href={getSiteRoot() + "About"}>About</NavItem>
-            </ul>
-            <User />
+        <div>
+            <div className='px-3 pt-3'>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 className="offcanvas-title"><GiBookCover />&ensp;Arcane Logbook</h2>
+                    <Button className=" p-2 fs-3 d-flex jusify-content-center align-items-center" toggle="offcanvas" aria-label="Close"><GiHamburgerMenu /></Button>
+                </div>
+                <hr></hr>
+            </div>
+            <div>
+                <div type='button' className={navItemClass}><AiOutlineHome />&nbsp;Home</div>
+                <div type='button' className={navItemClass}><GiCrossedSwords />&nbsp; Arena</div>
+                <div type='button' className={navItemClass}><GiBookmark />&nbsp; Campaigns</div>
+                <div type='button' className={navItemClass}><GiSwordman />&nbsp; Characters</div>
+            </div>
         </div>
     )
 }

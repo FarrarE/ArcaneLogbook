@@ -9,12 +9,12 @@ const icons = [<GiThrownDaggers />, <GiAxeSwing />, <GiCrosshairArrow />, <GiWiz
 
 function IconCard({ children }) {
     const [selected, setSelected] = useState(false);
-
+    const baseClass = 'icon-card p-1 me-3 fs-4 rounded d-flex justify-content-center align-items-center '
     return (
         <div className='m-1'>
             <div
                 type='button'
-                className={'icon-card p-1 me-3 fs-4 rounded ' + (selected ? 'icon-card-selected' : '')}
+                className={baseClass + (selected ? 'icon-card-selected' : '')}
                 onClick={() => setSelected(!selected)}>
                 {children}
             </div>

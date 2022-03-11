@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Button({ className, children, color, toggle, target, dismiss }) {
+export default function Button(props) {
+    const { className, children, color, toggle, target, dismiss } = props;
     let buttonClass;
     switch (color) {
         case 'primary':
@@ -24,6 +25,7 @@ export default function Button({ className, children, color, toggle, target, dis
 
     return (!!toggle ?
         <button
+            {...props}
             type="button"
             className={`${buttonClass} ${className}`} 
             data-bs-toggle={toggle}
@@ -31,7 +33,7 @@ export default function Button({ className, children, color, toggle, target, dis
             {children}
         </button>
         :
-        <button type="button" className={`${buttonClass} ${className}`} data-bs-dismiss={dismiss}>{children}</button>
+        <button {...props} type="button" className={`${buttonClass} ${className}`} data-bs-dismiss={dismiss}>{children}</button>
     )
 }
 

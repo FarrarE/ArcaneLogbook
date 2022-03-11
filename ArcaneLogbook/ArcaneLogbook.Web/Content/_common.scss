@@ -1,9 +1,9 @@
 @import './bootstrap/colors';
 
-body,
 #root{
     height: 100vh;
-    background-color: #f8f8f8;
+    background-color: $light;
+    padding-top: 1rem;
 }
 
 .card {
@@ -33,16 +33,17 @@ a:hover {
     box-shadow: 0 0 0 0.25rem $primary-shadow;
 }
 
-// Grid
+// Hover
 
-.grid-col-2 {
-    grid-template-columns: 50% 50%;
+.hover-primary{
+    &:hover{
+        box-shadow: 0 0 0 0.25rem $primary-shadow !important;
+    }
 }
 
-.grid-col-3 {
-    grid-template-columns: 33.3% 33.3% 33.3%;
-}
-
-.grid-col-4 {
-    grid-template-columns: 25% 25% 25% 25%;
+.hover-bg-primary{
+    &:hover{
+        background-color: $primary;
+        color: white;
+    }
 }

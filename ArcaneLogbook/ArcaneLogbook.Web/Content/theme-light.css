@@ -1,8 +1,8 @@
 @charset "UTF-8";
-body,
 #root {
   height: 100vh;
-  background-color: #f8f8f8;
+  background-color: #f8f9fa;
+  padding-top: 1rem;
 }
 
 .card button {
@@ -34,19 +34,14 @@ a:hover {
           box-shadow: 0 0 0 0.25rem rgba(205, 127, 50, 0.25);
 }
 
-.grid-col-2 {
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+.hover-primary:hover {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(205, 127, 50, 0.25) !important;
+          box-shadow: 0 0 0 0.25rem rgba(205, 127, 50, 0.25) !important;
 }
 
-.grid-col-3 {
-  -ms-grid-columns: 33.3% 33.3% 33.3%;
-      grid-template-columns: 33.3% 33.3% 33.3%;
-}
-
-.grid-col-4 {
-  -ms-grid-columns: 25% 25% 25% 25%;
-      grid-template-columns: 25% 25% 25% 25%;
+.hover-bg-primary:hover {
+  background-color: #CD7F32;
+  color: white;
 }
 
 /*!
@@ -3551,7 +3546,7 @@ textarea.form-control-lg {
 }
 
 .btn-outline {
-  color: #CD7F32;
+  color: black;
   border: 1px solid rgba(0, 0, 0, 0.125);
   background: white;
 }
@@ -7059,6 +7054,24 @@ textarea.form-control-lg {
 .offcanvas.show {
   -webkit-transform: none;
           transform: none;
+}
+
+.offcanvas-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+
+.offcanvas-backdrop.fade {
+  opacity: 0;
+}
+
+.offcanvas-backdrop.show {
+  opacity: 0.5;
 }
 
 .clearfix::after {

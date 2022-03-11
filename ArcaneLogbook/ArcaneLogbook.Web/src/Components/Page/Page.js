@@ -1,5 +1,8 @@
 import React from 'react';
 import NavBar from '../Navbar';
+import Drawer from 'Components/Drawer';
+import Button from 'Components/Button';
+import { GiHamburgerMenu } from "react-icons/gi";
 
 export function PageHeader({ header, children }) {
     return (
@@ -15,8 +18,18 @@ export function PageHeader({ header, children }) {
 export default function Page({ children }) {
     return (
         <React.Fragment>
-            <NavBar />
-            <div className='container mt-3 p-3 rounded'>
+            <Drawer id='NavDrawer' position='start' backdrop='true'>
+                <NavBar />
+            </Drawer>
+            <Button
+                className="p-2 fs-3 ms-3 d-flex jusify-content-center align-items-center rounded shadow-sm"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#NavDrawer"
+                aria-controls="NavDrawer">
+                <GiHamburgerMenu />
+            </Button>
+            <div className='container'>
                 {children}
             </div>
         </React.Fragment>
